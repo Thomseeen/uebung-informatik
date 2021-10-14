@@ -1,0 +1,112 @@
+%% ----------------------------------------
+%% Preamble
+%% ----------------------------------------
+\documentclass[]{scrartcl}
+
+\usepackage[english, ngerman]{babel}			% Deutsche typogr. Regeln + Trenntabelle
+\usepackage[babel, german=quotes]{csquotes}		% Anführungszeichen
+\usepackage{graphicx}							% Tabellen
+\usepackage{listings}							% Code Listings
+\usepackage{xcolor}
+\usepackage{enumerate}
+
+%% ----------------------------------------
+%% C-Code Listing style
+%% ----------------------------------------
+\definecolor{mGreen}{rgb}{0,0.6,0}
+\definecolor{mGray}{rgb}{0.5,0.5,0.5}
+\definecolor{mPurple}{rgb}{0.58,0,0.82}
+\definecolor{backgroundColour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{CStyle}{
+	backgroundcolor=\color{backgroundColour},   
+	commentstyle=\color{mGreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{mGray},
+	stringstyle=\color{mPurple},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2,
+	language=C
+}
+
+
+%% ----------------------------------------
+%% Metadata
+%% ----------------------------------------
+\title{Zusatzübung Informatik}
+\author{Thomas Wagner (\texttt{thomas.wagner@pa-systems.de})}
+
+
+%% ----------------------------------------
+%% Document
+%% ----------------------------------------
+\begin{document}
+\lstset{style=CStyle}
+
+\maketitle
+
+\section{Zahlensysteme}
+
+\subsection{Umrechnung}
+Rechne die Zahlen in der Tabelle jeweils in alle Zahlensysteme um.
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{l|l|l|llll}
+		\multicolumn{1}{c|}{\textbf{Dezimal/base10}} &
+		\multicolumn{1}{c|}{\textbf{Binär/base2}} &
+		\multicolumn{1}{c|}{\textbf{Oktal/base8}} &
+		\multicolumn{1}{c}{\textbf{Hexadezimal/base16}} &
+		\multicolumn{1}{c}{\textbf{}} &
+		\multicolumn{1}{c}{\textbf{}} &
+		\multicolumn{1}{c}{\textbf{}} \\ \hline
+		1110  & 10001010110      & 2126   & 456  &  &  &  \\ \hline
+		1023  & 1111111111       & 1777   & 3FF  &  &  &  \\ \hline
+		44203 & 1010110010101011 & 126253 & ACAB &  &  &  \\ \hline
+		231   & 11100111         & 347    & E7   &  &  &  \\ \hline
+		123   & 01111011         & 173    & 7B   &  &  &  \\ \hline
+		450   & 111000010        & 7C2    & 1C2  &  &  &  \\ \hline
+		2706  & 10111000110      & 1178   & 5C6  &  &  &  \\ \hline
+		1010  & 1111110010       & 1762   & 3F2  &  &  &  \\ \hline
+		4110  & 1000000010000    & 1002   & 1010 &  &  &  \\ \hline
+		1958  & 11110100110      & 3646   & 7A6  &  &  &
+	\end{tabular}
+\end{table}
+
+\section{Variablen}
+
+\subsection{Gleitkomma Berechnungen}
+Welche Werte enthalten die nachfolgenden Variablen?
+
+\begin{enumerate}[{1)}]
+	\item \lstinline|int i = 12.6 * 2.0;|
+	\item \lstinline|int i = 2.6 * 3;|
+	\item \lstinline|int i = 10;|\\
+	\lstinline|double d = ((i++ * ((i + 1) % 3)) - 1) / 2.0;|
+\end{enumerate}
+
+\subsection{Logische und binäre Berechnungen}
+Welche Werte nimmt z jeweils an?\\
+\lstinline|int x = 16;|\\
+\lstinline|int y = 0;|\\
+\lstinline|int z;|
+
+\begin{enumerate}[{1)}]
+	\item \lstinline|z = x >> 2;|
+	\item \lstinline|z = x & y;|
+	\item \lstinline|z = (x && y) ? 10 : 20;|
+	\item \lstinline{z = x | y}
+	\item \lstinline{z = x || y}
+	\item \lstinline|z = x % (y + 3)|
+\end{enumerate}
+
+\end{document}

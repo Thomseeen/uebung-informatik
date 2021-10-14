@@ -1,0 +1,17 @@
+# MikTeX
+## Build
+*.pdf
+## Build artifacts
+*.synctex.gz
+*.aux
+*.bbl
+*.blg
+*.lof
+*.log
+*.lot
+*.out
+*.toc
+
+# Bibliography
+*.bib.bak
+*.bib.sav
