@@ -15,3 +15,6 @@
 # Bibliography
 *.bib.bak
 *.bib.sav
+*.fdb_latexmk
+*.fls
+*.xdv
