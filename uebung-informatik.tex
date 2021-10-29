@@ -8,7 +8,8 @@
 \usepackage{graphicx}							% Tabellen
 \usepackage{listings}							% Code Listings
 \usepackage{xcolor}
-\usepackage{enumerate}
+\usepackage{enumerate}							% Auflistungen mit Custom Symbolen
+\usepackage{verbatim}							% Multiline Kommentare
 
 %% ----------------------------------------
 %% C-Code Listing style
@@ -133,6 +134,49 @@ Welche Werte haben die angegebenen Variablen?\\
 \end{enumerate}
 
 \section{Programme}
+\subsection{Schleifen und arithmetische Logik}
+Schreibe ein vollständiges C-Programm, dass die folgende Funktionalität besitzt.
+\begin{enumerate}[{1)}]
+	\item Vom Benutzer werden zwei Zahlen eingelesen. Es wird die größere und die kleinere Zahl ausgegeben, sowie der Mittelwert.
+	
+	\item Vom Benutzer werden drei Zahlen eingelesen. Sie werden der Größe nach geordnet ausgegeben.
+	
+	\item Es werden alle Zahlen von 100 bis 200 ausgegeben, die weder durch 3, noch durch 7 teilbar sind.
+	
+	\item Erzeuge mithilfe einer Schleife eine Tabelle in der Konsole, die ASCII-Symbole mit ihrem jeweiligen Byte-Wert darstellt. Beispiel:\\
+	\texttt{
+		65 - A - a\\
+		66 - B - b\\
+		67 - C - c\\
+		...\\
+		90 - Z - z\\
+	}
+
+	\item Vom Benutzer wird eine Zahl eingelesen. Die Quersumme der Zahl wird ausgegeben.
+	
+	\item \textbf{Caesar-Verschlüsselung}: Vom Benutzer wird eine Zahl (Übersetzungsschlüssel) und ein Zeichen eingelesen. Das Zeichen wird um den Wert des Übersetzungsschlüssels im Alphabet verschoben und ausgegeben. Das Zeichen soll nur ein Buchstabe sein, bei falscher Eingabe soll eine Fehlermeldung ausgegeben werden. Beachte Klein- und Großschreibung! Beispiel:\\
+	\texttt{
+		Schlüssel: 3, Zeichen: d => g\\
+		Schlüssel: 5, Zeichen: Y => D\\
+		Schlüssel: 5, Zeichen: \& => Error
+	}
+
+	\item \textbf{Reziproke Summe}: Es werden vom Benutzer Zahlen eingelesen und die reziproke Summe berechnet: $y = \frac{1}{x_1} + \frac{1}{x_2} + \frac{1}{x_3} + \ldots + \frac{1}{x_n}$. Das Zwischenergebnis wird nach jeder Eingabe ausgegeben. Das Programm wird beendet, sobald der Benutzer 0 eingibt. Dann wird das Endergebnis ausgegeben.
+	
+	\item \textbf{Einstellige Quersumme}: Vom Benutzer wird eine Zahl eingelesen. Die Quersumme wird berechnet. Es wird solange die Quersumme des jeweiligen Ergebnisses berechnet, bis eine einstellige Zahl rauskommt. Alle Zwischenschritte werden ausgegeben. Zusatz: Die Berechnung einer Quersumme wird in eine Funktion ausgelagert. Beispiel:
+	\texttt{
+		839568 => 39 => 12 => 3
+	}
+
+	\item Die ersten 20 Glieder der Fibonacci-Zahlen werden in ein Array geschrieben und ausgegeben. Definition für die Reihe:\\
+	\texttt{
+		F[0] = 0\\
+		F[1] = 1\\
+		F[n] = F[n-1] + F[n-2]\\
+	}
+\end{enumerate}
+
+\begin{comment}
 \subsection{CAN-Frames}
 Ein CAN-Frame hat 8 Byte Daten. Oft werden in diese 8 Byte mehrere Messwerte codiert. Eine Beschreibungsdatei gibt dann an, an welcher Bit-Position sich ein Wert befindet und welche Bitlänge er hat. So können aus den 8 Byte Daten die für den jeweiligen Messwert relevanten Bits genommen werden. Die sich ergebende Zahl muss dann für den eigentlichen Messwert noch mit einem Faktor und einem Offset verrechnet werden.\\
 
@@ -145,5 +189,6 @@ Implementiere die passende Funktion \lstinline{float GetValueFromFrame(byte[] da
 	\item Maskiere und schiebe das \lstinline|long|, um die genauen Bitpositionen/-länge einzuhalten
 	\item Verrechne das Ergebnis mit dem Faktor und Offset
 \end{enumerate}
+\end{comment}
 
 \end{document}
