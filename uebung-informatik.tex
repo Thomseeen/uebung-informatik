@@ -134,8 +134,7 @@ Welche Werte haben die angegebenen Variablen?\\
 \end{enumerate}
 
 \section{Programme}
-\subsection{Schleifen und arithmetische Logik}
-Schreibe ein vollständiges C-Programm, dass die folgende Funktionalität besitzt.
+Schreibe je ein vollständiges C-Programm, dass die folgende Funktionalität besitzt.
 \begin{enumerate}[{1)}]
 	\item Vom Benutzer werden zwei Zahlen eingelesen. Es wird die größere und die kleinere Zahl ausgegeben, sowie der Mittelwert.
 	
@@ -174,6 +173,91 @@ Schreibe ein vollständiges C-Programm, dass die folgende Funktionalität besitz
 		F[1] = 1\\
 		F[n] = F[n-1] + F[n-2]\\
 	}
+
+	\item Vom Benutzer wird eine römische Zahl eingelesen. Diese wird als arabische Zahl wieder ausgegeben. Tipp:
+	\texttt{
+		$I \widehat{=}    1$,
+		$V \widehat{=}    5$,
+		$X \widehat{=}   10$,
+		$L \widehat{=}   50$,
+		$C \widehat{=}  100$,
+		$D \widehat{=}  500$,
+		$M \widehat{=} 1000$
+	}
+
+	\item Vom Benutzer wird eine Zahl eingelesen. Diese wir als römische Zahl wieder ausgegeben.
+\end{enumerate}
+
+\section{Funktionen}
+Schreibe je eine Funktion, die die folgenden Funktionalität besitzt. Überlege, welche Parameter und welcher Rückgabewert sinnvoll sind.
+
+\begin{enumerate}[{1)}]
+	\item Berechne die Fakultät einer Zahl. Schreibe hierzu eine rekursive und eine iterative Variante.
+	
+	\item Prüfe ob eine Zahl gerade oder ungerade ist.
+	
+	\item Ermittle die Anzahl der Großbuchstaben in einer Zeichenkette.
+	
+	\item Ermittle den Durchschnitt aller Werte eines Integer-Arrays.
+	
+	\item Ermittle das Maximum aller Werte eines Integer-Arrays.
+	
+	\item Ermittle den Funktionswert der Funktion $f(x) = \frac{1}{x^2 - 3}$ an der Stelle $x$.
+	
+	\item (Extra) Prüfe ob eine Zahl durch 6 teilbar ist, ohne den Modulo-Operator zu verwenden.
+	
+	\item (Extra) Ermittle den Median aller Werte eines Integer-Arrays. Tipp: Der Median der Zahlen 2,3,4,8 ist 4. Der Median der Zahlen 2,3,5,8 ist 3.5.
+\end{enumerate}
+
+\section{Sonstiges}
+\begin{enumerate}[{1)}]
+\item Finde alle Fehler im Programm (Syntax und Logik).
+\begin{lstlisting}
+#define CNT 10
+
+int main() {
+	int arr[CNT], jj;
+	
+	for (ii = 0; ii < CNT; ii++) {
+		printf("Enter a number: ");
+		scanf("%ii", arr[ii]);
+	}
+
+	for (jj = 0; jj < CNT; jj++)	{
+		arr[jj] =+ arr[jj+1];
+		printf("Number %i is %i\n", jj, arr[jj]);
+	}
+
+	return 0
+}
+\end{lstlisting}
+
+\item Was macht das folgende Programm?
+\begin{lstlisting}
+#include <stdio.h>
+
+int main() {
+	int a,b,c;
+	
+	printf("Enter three numbers: ");
+	scanf("%d", &a);
+	scanf("%d", &b);
+	scanf("%d", &c);
+	
+	int wtf = a < b ? (c < a ? a : (c < b ? c : b)) : (c < b ? b : (c < a ? c : a));
+	
+	printf("The result is: %d\n", wtf);
+	
+	return 0;
+}
+\end{lstlisting}
+
+\item Was berechnet die folgende Funktion?
+\begin{lstlisting}	
+unsigned long long magic(unsigned int y) {
+	return y == 0 ? 1 : 2ull << (y - 1);
+}
+\end{lstlisting}
 \end{enumerate}
 
 \begin{comment}
