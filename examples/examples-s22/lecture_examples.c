@@ -109,3 +109,7 @@ void lecture2_loops() {
 		printf("Number %d is %d\n", idx_for, arr[idx_for]);
 	}
 }
+
+void lecture3_strings() {
+
+}
