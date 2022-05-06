@@ -24,12 +24,18 @@
     <ClCompile Include="lecture_examples_arrays.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="lecture_examples_strings.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lecture_examples.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="lecture_examples_arrays.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="lecture_examples_strings.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
