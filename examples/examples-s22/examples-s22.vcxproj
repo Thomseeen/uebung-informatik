@@ -141,12 +141,14 @@
   <ItemGroup>
     <ClCompile Include="lecture_examples.c" />
     <ClCompile Include="lecture_examples_arrays.c" />
+    <ClCompile Include="lecture_examples_functions.c" />
     <ClCompile Include="lecture_examples_strings.c" />
     <ClCompile Include="main.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lecture_examples.h" />
     <ClInclude Include="lecture_examples_arrays.h" />
+    <ClInclude Include="lecture_examples_functions.h" />
     <ClInclude Include="lecture_examples_strings.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

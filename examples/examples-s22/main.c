@@ -3,6 +3,7 @@
 #include "lecture_examples.h"
 #include "lecture_examples_arrays.h"
 #include "lecture_examples_strings.h"
+#include "lecture_examples_functions.h"
 
 void print_is_alphanumeric(char cc) {
 	printf("%c is alphanumeric? -> %s\n", cc, is_alphanumeric(cc) ? "yes" : "no");
