@@ -10,5 +10,8 @@ int main(int argc, char* argv[]) {
     format_identifier();
     loops();
 
+    int ii;
+    scanf_s(" %i", &ii);
+
     return 0;
 }
