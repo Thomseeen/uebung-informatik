@@ -6,26 +6,29 @@
 #define SIZE 5
 
 int main(int argc, char* argv[]) {
-    int my_arr[SIZE] = { 0 };
-    int my_arr2[SIZE] = { 0 };
+    printf("size of int %llu bytes\n", sizeof(int));
 
-    for (int i = 0, j = SIZE - 1; i < SIZE; i++, j--) {
-        printf("index %d: %d\n", i, my_arr[i] + my_arr2[j]);
-    }
+    char a = 50;
+    char b = '1';
 
-    int i = 0;
-    int j = SIZE;
-    while (i < SIZE) {
-        printf("index %d: %d\n", i, my_arr[i] + my_arr2[j]);
-        i++;
-        j--;
-    }
+    printf("%c", a); // 2
+    printf("%d", a); // 50
+    printf("%c", b); // 1
+    printf("%d", b); // 49
 
-    int j = 0;
-    do {
-        printf("index %d: %d\n", j, my_arr[j]);
-        j++;
-    } while (j < SIZE);
+    char c_arr[] = { 'a', 49 };
+    char c_arr2[] = { 'a', 49, '\0' };
+    int i_arr[3] = { 'a', 0 };
+
+    printf("%c", c_arr[1]);
+    printf("%d", i_arr[2]);
+
+    char s_arr[100] = "hello";
+    char arr;
+
+    scanf_s("%s", s_arr, 6);
+    scanf_s("%c", &s_arr[0], 1);
+    printf("%s", s_arr[1]);
 
     return 0;
 }
