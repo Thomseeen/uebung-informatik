@@ -6,29 +6,49 @@
 #define SIZE 5
 
 int main(int argc, char* argv[]) {
-    printf("size of int %llu bytes\n", sizeof(int));
 
-    char a = 50;
-    char b = '1';
+    if (0) {
+        printf("Piep 0\n");
+    }
 
-    printf("%c", a); // 2
-    printf("%d", a); // 50
-    printf("%c", b); // 1
-    printf("%d", b); // 49
+    if (1) {
+        printf("Piep 1\n");
+    }
 
-    char c_arr[] = { 'a', 49 };
-    char c_arr2[] = { 'a', 49, '\0' };
-    int i_arr[3] = { 'a', 0 };
+    int a = 0;
+    if (a = 0) {
+        printf("Piep a\n");
+    }
 
-    printf("%c", c_arr[1]);
-    printf("%d", i_arr[2]);
+    int b = 0;
+    if (b = 1) {
+        printf("Piep b\n");
+    }
 
-    char s_arr[100] = "hello";
-    char arr;
+    int c = 0;
+    if (c == 0) {
+        printf("Piep c\n");
+    }
 
-    scanf_s("%s", s_arr, 6);
-    scanf_s("%c", &s_arr[0], 1);
-    printf("%s", s_arr[1]);
+    int d = 0;
+    if (d == 1) {
+        printf("Piep d\n");
+    }
+
+    int e = 0;
+    if (e++) {
+        printf("Piep e\n");
+    }
+
+    int f = 0;
+    if (++f) {
+        printf("Piep f\n");
+    }
+
+    int g = 0;
+    if (g = 16 == 0x10) {
+        printf("Piep g\n");
+    }
 
     return 0;
 }
