@@ -1,13 +1,9 @@
 #include <stdio.h>
-#include <string.h>
-
-#include "lecture_examples1.h"
-
 
 float decode_can_frame(char data[], int bit_pos, int bit_len, float val_factor, float val_offset);
 
 int main(int argc, char* argv[]) {
-    // Frame 0x641=1601: Motor_Code_01
+    // CAN-Frame, ID: 0x641=1601, Name: Motor_Code_01
     char data[] = { 0xF5, 0xD5, 0x13, 0xD7, 0x14, 0x0E, 0x73, 0x72 };
 
     float hubraum = decode_can_frame(data, 40, 7, 0.1f, 0);
@@ -24,16 +20,20 @@ float decode_can_frame(char data[], int bit_pos, int bit_len, float val_factor, 
     int end_byte = (bit_pos + bit_len) / 8;
     int byte_len = end_byte - start_byte + 1;
 
-    unsigned long raw_value = 0;
+    unsigned int raw_value = 0;
 
+    // relevant bytes are pushed into a combined unsigned long
     for (int ii = start_byte, shift_cnt = 0; ii <= end_byte; ii++, shift_cnt += 8) {
-        raw_value |= (unsigned long)data[ii] << shift_cnt;
+        raw_value |= data[ii] << shift_cnt;
     }
 
-    int mask = (2 << (bit_len - 1)) - 1;
-
+    // offset shift, to remove any not needed bits around LSB
     raw_value >>= bit_pos % 8;
-    raw_value &= mask;
 
+    // length mask, to mask any not needed bits around MSB
+    int len_mask = (2 << (bit_len - 1)) - 1;
+    raw_value &= len_mask;
+
+    // apply factor and offset to final value
     return ((float)raw_value) * val_factor + val_offset;
 }
