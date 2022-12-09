@@ -22,7 +22,7 @@ float decode_can_frame(char data[], int bit_pos, int bit_len, float val_factor, 
 
     unsigned int raw_value = 0;
 
-    // relevant bytes are pushed into a combined unsigned long
+    // relevant bytes are pushed into a combined integer
     for (int ii = start_byte, shift_cnt = 0; ii <= end_byte; ii++, shift_cnt += 8) {
         raw_value |= data[ii] << shift_cnt;
     }
