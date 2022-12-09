@@ -18,7 +18,6 @@ int main(int argc, char* argv[]) {
 float decode_can_frame(char data[], int bit_pos, int bit_len, float val_factor, float val_offset) {
     int start_byte = bit_pos / 8;
     int end_byte = (bit_pos + bit_len) / 8;
-    int byte_len = end_byte - start_byte + 1;
 
     unsigned int raw_value = 0;
 
@@ -31,9 +30,10 @@ float decode_can_frame(char data[], int bit_pos, int bit_len, float val_factor, 
     raw_value >>= bit_pos % 8;
 
     // length mask, to mask any not needed bits around MSB
-    int len_mask = (2 << (bit_len - 1)) - 1;
+    int pow_2_bit_len = 2 << (bit_len - 1);
+    int len_mask = pow_2_bit_len - 1;
     raw_value &= len_mask;
 
     // apply factor and offset to final value
-    return ((float)raw_value) * val_factor + val_offset;
+    return raw_value * val_factor + val_offset;
 }
