@@ -1,54 +1,39 @@
 #include <stdio.h>
+#include <string.h>
 
 #include "lecture_examples1.h"
 
 
-#define SIZE 5
+float decode_can_frame(char data[], int bit_pos, int bit_len, float val_factor, float val_offset);
 
 int main(int argc, char* argv[]) {
+    // Frame 0x641=1601: Motor_Code_01
+    char data[] = { 0xF5, 0xD5, 0x13, 0xD7, 0x14, 0x0E, 0x73, 0x72 };
 
-    if (0) {
-        printf("Piep 0\n");
-    }
+    float hubraum = decode_can_frame(data, 40, 7, 0.1f, 0);
+    float leistung = decode_can_frame(data, 48, 9, 1, 0);
 
-    if (1) {
-        printf("Piep 1\n");
-    }
-
-    int a = 0;
-    if (a = 0) {
-        printf("Piep a\n");
-    }
-
-    int b = 0;
-    if (b = 1) {
-        printf("Piep b\n");
-    }
-
-    int c = 0;
-    if (c == 0) {
-        printf("Piep c\n");
-    }
-
-    int d = 0;
-    if (d == 1) {
-        printf("Piep d\n");
-    }
-
-    int e = 0;
-    if (e++) {
-        printf("Piep e\n");
-    }
-
-    int f = 0;
-    if (++f) {
-        printf("Piep f\n");
-    }
-
-    int g = 0;
-    if (g = 16 == 0x10) {
-        printf("Piep g\n");
-    }
+    printf("MO_Hubraum: %.2f l\n", hubraum);
+    printf("MO_Leistung: %.2f kW\n", leistung);
 
     return 0;
+}
+
+float decode_can_frame(char data[], int bit_pos, int bit_len, float val_factor, float val_offset) {
+    int start_byte = bit_pos / 8;
+    int end_byte = (bit_pos + bit_len) / 8;
+    int byte_len = end_byte - start_byte + 1;
+
+    unsigned long raw_value = 0;
+
+    for (int ii = start_byte, shift_cnt = 0; ii <= end_byte; ii++, shift_cnt += 8) {
+        raw_value |= (unsigned long)data[ii] << shift_cnt;
+    }
+
+    int mask = (2 << (bit_len - 1)) - 1;
+
+    raw_value >>= bit_pos % 8;
+    raw_value &= mask;
+
+    return ((float)raw_value) * val_factor + val_offset;
 }
