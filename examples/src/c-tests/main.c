@@ -1,28 +1,39 @@
 #include <stdio.h>
 
 int main() {
-    int arr1[3] = { 0, 1, 2 };
+    int aa = 0;
+    int bb = 0;
 
-    int arr2[5] = { 0, 1, 2, 3, 4 };
+    printf("\n--- INT x++ ---\n");
+    printf("%d\n", aa++);
 
-    int size = 6;
-    int arr3[size];
-    int calc_size = sizeof(arr3) / sizeof(int);
+    printf("\n--- INT ++x ---\n");
+    printf("%d\n", ++bb);
 
-    printf("\narr1 is %lu long:\n", sizeof(arr1) / sizeof(int));
-    for (int ii = 0; ii < 10; ii++) {
-        printf("%d: %d, ", ii, arr1[ii]);
+    printf("\n--- FOR ++x ---\n");
+    for (int ii = 0; ii < 5; ++ii) {
+        printf("%d\n", ii);
     }
 
-    printf("\narr2 is %lu long:\n", sizeof(arr2) / sizeof(int));
-    for (int ii = 0; ii < 10; ii++) {
-        printf("%d: %d, ", ii, arr2[ii]);
+    printf("\n--- FOR x++ ---\n");
+    for (int ii = 0; ii < 5; ii++) {
+        printf("%d\n", ii);
     }
 
-    printf("\narr3 is %lu long:\n", sizeof(arr3) / sizeof(int));
-    for (int ii = 0; ii < 10; ii++) {
-        printf("%d: %d, ", ii, arr3[ii]);
+    printf("\n--- WHILE x++ ---\n");
+    int jj = 0;
+    while (jj++ < 5) {
+        printf("%d\n", jj);
     }
+
+    printf("\n--- WHILE ++x ---\n");
+    int kk = 0;
+    while (++kk < 5) {
+        printf("%d\n", kk);
+    }
+
+    printf("\nPress ENTER to Continue\n");
+    int ch = getchar();
 
     return 0;
 }
