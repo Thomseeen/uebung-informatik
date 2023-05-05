@@ -1,36 +1,25 @@
 #include <stdio.h>
 
 int main() {
-    int aa = 0;
-    int bb = 0;
+    char c; // 1
+    unsigned char uc; // 1
+    short s; // 2
+    unsigned short us;// 2
+    int i; // 4
+    unsigned int ui;// 4
+    long l; // 4
+    unsigned long ul;// 4
+    long long ll; // 8
+    unsigned long long ull; // 8
 
-    printf("\n--- INT x++ ---\n");
-    printf("%d\n", aa++);
+    float f; // 4
+    double d; // 8
 
-    printf("\n--- INT ++x ---\n");
-    printf("%d\n", ++bb);
-
-    printf("\n--- FOR ++x ---\n");
-    for (int ii = 0; ii < 5; ++ii) {
-        printf("%d\n", ii);
-    }
-
-    printf("\n--- FOR x++ ---\n");
-    for (int ii = 0; ii < 5; ii++) {
-        printf("%d\n", ii);
-    }
-
-    printf("\n--- WHILE x++ ---\n");
-    int jj = 0;
-    while (jj++ < 5) {
-        printf("%d\n", jj);
-    }
-
-    printf("\n--- WHILE ++x ---\n");
-    int kk = 0;
-    while (++kk < 5) {
-        printf("%d\n", kk);
-    }
+    printf("sizeof(char): %d\n", sizeof(char));
+    printf("sizeof(char): %d\n", sizeof(short));
+    printf("sizeof(char): %d\n", sizeof(int));
+    printf("sizeof(char): %d\n", sizeof(long));
+    printf("sizeof(char): %d\n", sizeof(long long));
 
     printf("\nPress ENTER to Continue\n");
     int ch = getchar();
