@@ -1,25 +1,20 @@
 #include <stdio.h>
 
 int main() {
-    char c; // 1
-    unsigned char uc; // 1
-    short s; // 2
-    unsigned short us;// 2
-    int i; // 4
-    unsigned int ui;// 4
-    long l; // 4
-    unsigned long ul;// 4
-    long long ll; // 8
-    unsigned long long ull; // 8
+    int my_numbers[3][2];
 
-    float f; // 4
-    double d; // 8
+    int cnt = 0;
+    for (int ii = 0; ii < 3; ii++) {
+        for (int jj = 0; jj < 2; jj++) {
+            my_numbers[ii][jj] = cnt++;
+        }
+    }
 
-    printf("sizeof(char): %d\n", sizeof(char));
-    printf("sizeof(char): %d\n", sizeof(short));
-    printf("sizeof(char): %d\n", sizeof(int));
-    printf("sizeof(char): %d\n", sizeof(long));
-    printf("sizeof(char): %d\n", sizeof(long long));
+    for (int ii = 0; ii < 3; ii++) {
+        for (int jj = 0; jj < 2; jj++) {
+            printf("%d %d: %d\n", ii, jj, my_numbers[ii][jj]);
+        }
+    }
 
     printf("\nPress ENTER to Continue\n");
     int ch = getchar();
