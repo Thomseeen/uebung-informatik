@@ -17,46 +17,18 @@ int exit_program(int code) {
 
 void print_card_name(short encoded_name) {
     // ???
-    switch (encoded_name) {
-    case MilfareClassik1k:
-        printf("Milfare Classic 1K\n");
-        break;
-    case MilfareClassik4k:
-        printf("Milfare Classic 4K\n");
-        break;
-    case MilfareUltralight:
-        printf("Milfare Ultralight\n");
-        break;
-    case MilfareMini:
-        printf("Milfare Mini\n");
-        break;
-    case TopazAndJewel:
-        printf("Topaz and Jewel\n");
-        break;
-    case FeliCa212K:
-        printf("FeliCa 212K\n");
-        break;
-    case FeliCa424K:
-        printf("FeliCa 424K\n");
-        break;
-    }
 }
 
 char calculate_check_byte(char* data, char start, char length) {
-    char result = 0;
+    // ???
 
-    for (int ii = start; ii < length; ii++) {
-        char test = data[ii];
-        result ^= data[ii];
-    }
-
-    return result;
+    return 0;
 }
 
 int main() {
     char raw_atr[] = { 0x3B, 0x8F, 0x80, 0x01, 0x80, 0x4F, 0x0C, 0xA0, 0x00, 0x00, 0x03, 0x06, 0x03, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00, 0x6A };
 
-    char hist_bytes_cnt = raw_atr[1] & 0x0F; // ???
+    char hist_bytes_cnt = 0; // ???
     char bytes_cnt = hist_bytes_cnt + 5;
 
     if (calculate_check_byte(raw_atr, 1, bytes_cnt - 2) != raw_atr[bytes_cnt - 1]) {
