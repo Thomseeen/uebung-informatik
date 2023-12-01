@@ -29,8 +29,8 @@ void format_identifier() {
     scanf_s("%hi", &ss);
     scanf_s("%hu", &us);
 
-    scanf_s("%i", &si);
-    scanf_s("%u", &ui);
+    scanf_s(" %i", &si);
+    scanf_s(" %u", &ui);
 
     scanf_s("%li", &sl);
     scanf_s("%lu", &ul);

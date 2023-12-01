@@ -1,35 +1,19 @@
 #include <stdio.h>
 
 int main() {
-    int aa = 0;
-    int bb = 0;
+    int my_numbers[3][2];
 
-    printf("\n--- INT x++ ---\n");
-    printf("%d\n", aa++);
-
-    printf("\n--- INT ++x ---\n");
-    printf("%d\n", ++bb);
-
-    printf("\n--- FOR ++x ---\n");
-    for (int ii = 0; ii < 5; ++ii) {
-        printf("%d\n", ii);
+    int cnt = 0;
+    for (int ii = 0; ii < 3; ii++) {
+        for (int jj = 0; jj < 2; jj++) {
+            my_numbers[ii][jj] = cnt++;
+        }
     }
 
-    printf("\n--- FOR x++ ---\n");
-    for (int ii = 0; ii < 5; ii++) {
-        printf("%d\n", ii);
-    }
-
-    printf("\n--- WHILE x++ ---\n");
-    int jj = 0;
-    while (jj++ < 5) {
-        printf("%d\n", jj);
-    }
-
-    printf("\n--- WHILE ++x ---\n");
-    int kk = 0;
-    while (++kk < 5) {
-        printf("%d\n", kk);
+    for (int ii = 0; ii < 3; ii++) {
+        for (int jj = 0; jj < 2; jj++) {
+            printf("%d %d: %d\n", ii, jj, my_numbers[ii][jj]);
+        }
     }
 
     printf("\nPress ENTER to Continue\n");
