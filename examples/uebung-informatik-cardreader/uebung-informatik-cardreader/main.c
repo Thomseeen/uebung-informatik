@@ -28,7 +28,7 @@ char calculate_check_byte(char* data, char start, char length) {
 int main() {
     char raw_atr[] = { 0x3B, 0x8F, 0x80, 0x01, 0x80, 0x4F, 0x0C, 0xA0, 0x00, 0x00, 0x03, 0x06, 0x03, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00, 0x6A };
 
-    char hist_bytes_cnt = 0; // ???
+    char hist_bytes_cnt = raw_atr[1] & 0x0F; // ???
     char bytes_cnt = hist_bytes_cnt + 5;
 
     if (calculate_check_byte(raw_atr, 1, bytes_cnt - 2) != raw_atr[bytes_cnt - 1]) {
