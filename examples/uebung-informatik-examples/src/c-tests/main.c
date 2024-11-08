@@ -1,33 +1,20 @@
 #include <stdio.h>
 
+int main() {
+    int my_numbers[3][2];
 
-
-float average(int values[], int values_cnt) {
-    int sum = 0;
-
-    for (int i = 0; i < values_cnt; i++) {
-        sum += values[i];
+    int cnt = 0;
+    for (int ii = 0; ii < 3; ii++) {
+        for (int jj = 0; jj < 2; jj++) {
+            my_numbers[ii][jj] = cnt++;
+        }
     }
 
-    return (float)sum / values_cnt;
-}
-
-int test(int arr[]) {
-    return sizeof(arr);
-}
-
-int main() {
-    int arr[] = { 0 , 1 , 2 };
-
-    printf("Test1: %d\n", sizeof(arr));
-    printf("Test2: %d\n", test(arr));
-
-    float avg = average(arr, 3);
-
-    int foo = 0;
-    foo = 1;
-
-    printf("result is: %f\n", avg);
+    for (int ii = 0; ii < 3; ii++) {
+        for (int jj = 0; jj < 2; jj++) {
+            printf("%d %d: %d\n", ii, jj, my_numbers[ii][jj]);
+        }
+    }
 
     printf("\nPress ENTER to Continue\n");
     int ch = getchar();

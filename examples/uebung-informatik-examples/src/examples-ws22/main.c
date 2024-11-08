@@ -8,10 +8,12 @@
 #define MOVE COPY | DELETE
 
 int main(int argc, char* argv[]) {
-    char my_string[255];
+    char user_rights = READ_WRITE | COPY;
 
-    scanf_s("%s", my_string, 255);
-    printf("%s\n");
+    printf("%s READ\n", user_rights & READ ? "CAN" : "CANNOT");
+    printf("%s WRITE\n", user_rights & WRITE ? "CAN" : "CANNOT");
+    printf("%s COPY\n", user_rights & COPY ? "CAN" : "CANNOT");
+    printf("%s DELETE\n", user_rights & DELETE ? "CAN" : "CANNOT");
 
     printf("Press ENTER to Continue\n");
     int ch = getchar();
