@@ -1,7 +1,5 @@
 #include <stdio.h>
 
-#include "lecture_examples1.h"
-
 #define SIZE 3
 
 void format_identifier() {
