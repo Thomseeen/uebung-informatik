@@ -20,3 +20,57 @@ int main(int argc, char* argv[]) {
 
     return 0;
 }
+
+void example() {
+    for (int x = 0; x < 10; x++) {
+        printf("%d\n", x);
+    }
+
+    int y = 10;
+    while (y < 10) {
+        printf("%d\n", y);
+
+        y++;
+    }
+
+    int z = 10;
+    do {
+        printf("%d\n", z);
+        z++;
+    } while (z < 10);
+
+
+
+    for (int x = 0; x < 10; x++) {
+        if (x == 5) {
+            continue;
+        }
+
+        printf("%d\n", x);
+
+    }
+
+    while (1) {
+
+        if (stream_end()) {
+            break;
+        }
+    }
+}
+
+void test_operators() {
+    int a = 13;   // 1101   0110
+    int b = 8;    // 1000
+
+    int c = a ^ b; // 0101 = 5
+
+    int x = b << 1;
+
+    int codefield = 0b00110000;
+
+    int u = a >> 3;
+
+    char window_front_right = codefield & 0x08;
+    char window_front_left = codefield & 0x04;
+    int gear = codefield >> 4;
+}
