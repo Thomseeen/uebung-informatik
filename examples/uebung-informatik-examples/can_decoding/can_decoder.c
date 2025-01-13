@@ -30,8 +30,10 @@ double decode_signal_be(unsigned char frame[], int bit_pos, int bit_len, double 
     }
 
     int shift = 8 - bit_len % 8;
+    int mask = pow(2, bit_len) - 1;
 
     raw_value >>= shift;
+    raw_value &= mask;
 
     return raw_value * lin_factor + lin_offset;
 }
